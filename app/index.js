@@ -21,13 +21,31 @@ class ProfilePic extends React.Component{
   }
 }
 
+class Link extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    window.location.href = this.props.href;
+  }
+
+  render() {
+    return (
+      <span style={{ color: 'blue', cursor: 'pointer' }} onClick={this.handleClick}>
+        {this.props.children}
+      </span>
+    );
+  }
+}
+
 class ProfileLink extends React.Component{
   render() {
     return (
       <div>
-        <a href={`https://www.github.com/${this.props.username}`}>
+        <Link href={`https://www.github.com/${this.props.username}`}>
           {this.props.username}
-        </a>
+        </Link>
       </div>
     );
   }
