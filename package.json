@@ -18,6 +18,11 @@
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-preset-react": "^6.3.13",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "html-webpack-plugin": "^2.7.1",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
