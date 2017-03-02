@@ -1,8 +1,7 @@
-const React = require('react');
-const transparentBg = require('../styles').transparentBg;
-const Prompt = require('../components/Prompt');
+import React, { Component, PropTypes } from 'react';
+import Prompt from '../components/Prompt';
 
-class PromptContainer extends React.Component {
+class PromptContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,11 +29,11 @@ class PromptContainer extends React.Component {
         pathname: '/battle',
         query: {
           playerOne: this.props.routeParams.playerOne,
-          playerTwo: this.state.username
+          playerTwo: username
         }
       });
     } else {
-      this.context.router.push(`/playerTwo/${this.state.username}`);
+      this.context.router.push(`/playerTwo/${username}`);
     }
   }
 
@@ -48,34 +47,11 @@ class PromptContainer extends React.Component {
       />
     );
   }
-
- /* render() {
-    return (
-      <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
-        <h1>{this.props.route.header}</h1>
-        <div className="col-sm-12">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="GitHub Username"
-                onChange={this.handleChange}
-                value={this.state.username}
-              />
-            </div>
-            <div className="form-group col-sm-4 col-sm-offset-4">
-              <button className="btn btn-block btn-success">Continue</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    );
-  } */
 }
 
 PromptContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: PropTypes.object.isRequired
 };
 
-module.exports = PromptContainer;
+
+export default PromptContainer;

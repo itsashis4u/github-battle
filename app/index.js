@@ -1,8 +1,7 @@
-const ReactDOM = require('react-dom');
-
-const routes = require('./config/routes');
+import ReactDOM from 'react-dom';
+import routes from './config/routes';
 
 ReactDOM.render(
   routes,
-  document.getElementById('app'),
+  document.getElementById('app')
 );

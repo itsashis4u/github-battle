@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const Main = props => (
   <div className="main-container">
@@ -6,4 +6,4 @@ const Main = props => (
   </div>
 );
 
-module.exports = Main;
+export default Main;

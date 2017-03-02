@@ -1,5 +1,5 @@
-const React = require('react');
-const transparentBg = require('../styles').transparentBg;
+import React, { PropTypes } from 'react';
+import { transparentBg } from '../styles';
 
 function Prompt(props) {
   return (
@@ -26,10 +26,10 @@ function Prompt(props) {
 }
 
 Prompt.propTypes = {
-  header: React.PropTypes.string.isRequired,
-  username: React.PropTypes.string.isRequired,
-  handleChange: React.PropTypes.func.isRequired,
-  handleSubmit: React.PropTypes.func.isRequired
+  header: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
-module.exports = Prompt;
+export default Prompt;
