@@ -9,6 +9,7 @@ class ConfirmBattleContainer extends Component {
       isLoading: true,
       playersInfo: []
     };
+    this.handleInitiateBattle = this.handleInitiateBattle.bind(this);
   }
 
   componentDidMount() {
@@ -22,9 +23,22 @@ class ConfirmBattleContainer extends Component {
     });
   }
 
+  handleInitiateBattle() {
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        playersInfo: this.state.playersInfo
+      }
+    });
+  }
+
   render() {
     return (
-      <ConfirmBattle isLoading={this.state.isLoading} playersInfo={this.state.playersInfo} />
+      <ConfirmBattle
+        isLoading={this.state.isLoading}
+        onInitiateBattle={this.handleInitiateBattle}
+        playersInfo={this.state.playersInfo}
+      />
     );
   }
 }
