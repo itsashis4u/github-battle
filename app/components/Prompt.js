@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
-import { transparentBg } from '../styles';
+import styles from '../styles';
+
+const { transparentBg } = styles;
 
 function Prompt(props) {
   return (
