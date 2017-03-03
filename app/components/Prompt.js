@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
+import MainContainer from './MainContainer';
 import styles from '../styles';
-
-const { transparentBg } = styles;
 
 function Prompt(props) {
   return (
-    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
+    <MainContainer>
       <h1>{props.header}</h1>
       <div className="col-sm-12">
         <form onSubmit={props.handleSubmit}>
@@ -23,7 +22,7 @@ function Prompt(props) {
           </div>
         </form>
       </div>
-    </div>
+    </MainContainer>
   );
 }
 

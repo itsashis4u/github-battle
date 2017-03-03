@@ -2,18 +2,20 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from '../styles';
 import UserDetails from './UserDetails';
+import MainContainer from './MainContainer';
 import UserDetailsWrapper from './UserDetailsWrapper';
+import Loading from './Loading';
 
 function ConfirmBattle(props) {
   return props.isLoading === true ?
-    <p>Loading...</p> :
-    (<div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+    <Loading speed={800} text="Waiting" /> :
+    (<MainContainer>
       <h1>Confirm Players</h1>
       <div className="col-sm-8 col-sm-offset-2">
-        <UserDetailsWrapper player="One">
+        <UserDetailsWrapper header="Player One">
           <UserDetails info={props.playersInfo[0]} />
         </UserDetailsWrapper>
-        <UserDetailsWrapper player="Two">
+        <UserDetailsWrapper header="Player Two">
           <UserDetails info={props.playersInfo[1]} />
         </UserDetailsWrapper>
       </div>
@@ -27,7 +29,7 @@ function ConfirmBattle(props) {
           </Link>
         </div>
       </div>
-    </div>
+    </MainContainer>
     );
 }
 
