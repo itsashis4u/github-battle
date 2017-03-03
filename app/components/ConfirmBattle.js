@@ -4,10 +4,6 @@ import styles from '../styles';
 import UserDetails from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
 
-function puke(obj) {
-  return <pre>{JSON.stringify(obj, null, ' ')}</pre>;
-}
-
 function ConfirmBattle(props) {
   return props.isLoading === true ?
     <p>Loading...</p> :
